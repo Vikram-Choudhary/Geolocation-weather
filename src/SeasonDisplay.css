@@ -1,23 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  overflow: hidden;
-  background: #d22222;
-}
-
 div.widget {
   position: relative;
-  width: 380px;
-  height: 150px;
-  margin: 150px auto;
-  background-color: #fcfdfd;
+  width: 365px;
+  margin: 60px auto;
+  background-color: #fcfdfdb5;
   border-radius: 9px;
-  padding: 25px;
+  padding: 20px;
   padding-right: 30px;
   box-shadow: 0px 31px 35px -26px #080c21;
 }
@@ -28,19 +15,33 @@ div.date {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.other {
+  color: #878787 !important;
+}
+
 div.city {
   font-size: 21px;
   font-weight: bold;
   text-transform: uppercase;
-  padding-top: 5px;
+  padding-top: 7px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.icon-description {
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-top: 7px;
+  text-align: center;
   color: rgba(0, 0, 0, 0.7);
 }
 
 div.temp {
-  font-size: 50px;
+  font-size: 30px;
   color: rgba(0, 0, 0, 0.9);
   font-weight: 100;
-  margin: 34px 0px 0px 6px;
+  padding-bottom: 15px;
+  margin: 15px 0px 0px 3px;
 }
 
 div.panel {
@@ -51,18 +52,13 @@ div.right-panel {
   position: absolute;
   float: right;
   top: 0;
-  margin-top: 35px;
-  padding-left: 10px;
+  padding-top: 2vh;
 }
 
 .grid-container {
   padding: 0;
   margin: 0;
   list-style: none;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -70,9 +66,11 @@ div.right-panel {
 .grid-item {
   width: 210px;
   margin: 10px;
-  background-color: transparent;
+  background-color: black;
   overflow: hidden;
-  border: 5px;
+  border-radius: 9px;
+  border: 2px solid;
+  box-shadow: -20px 31px 35px -26px #080c21;
 }
 .night {
   background-color: silver;
@@ -80,7 +78,7 @@ div.right-panel {
 .card {
   position: relative;
   width: 100%;
-  padding: 6.5em 1em;
+  padding: 2.5em 1em;
   display: block;
 }
 .status {
