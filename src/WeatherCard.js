@@ -1,18 +1,30 @@
 import React from "react";
 import "./SeasonDisplay";
 export const WeatherCard = (props) => {
+  const current = props.todaysData && props.todaysData[0];
   return (
-    <div class="widget">
-      <div class="left-panel panel">
-        <div class="date">{props.date}</div>
-        <div class="city">{props.cityName}</div>
-        <div class="temp">{props.temp}&deg;C</div>
+    <div className="widget">
+      <div className="left-panel panel">
+        <div className="date">{`Today, ${new Date(
+          parseInt(current.dt) * 1000
+        ).toDateString()}`}</div>
+        <div className="city">{props.cityName}</div>
+        <div className="temp">{current.main.temp}&deg;C</div>
+        <div className="other">
+          Min:&nbsp;&nbsp;{current.main.temp_min}&deg;C&nbsp;&nbsp;&nbsp;&nbsp;Humidity:&nbsp;&nbsp;
+          {current.main.humidity}%
+        </div>
+        <div className="other">
+          Max:&nbsp;&nbsp;{current.main.temp_max}&deg;C&nbsp;&nbsp;&nbsp;&nbsp;Wind:&nbsp;&nbsp;
+          {current.wind.speed} km/h
+        </div>
       </div>
-      <div class="right-panel panel">
+      <div className="right-panel panel">
+        <div className="icon-description">{current.weather[0].description}</div>
         <img
-          src="https://s5.postimg.cc/yzcm7htyb/image.png"
-          alt=""
-          width="60"
+          src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}
+          alt={`${current.weather[0].description}`}
+          width="140px"
         />
       </div>
     </div>
@@ -21,9 +33,14 @@ export const WeatherCard = (props) => {
 
 export const ForecastCardGrid = (props) => {
   const array = props.weatherDetails;
-  console.log(array,"--->",array[0]);
   const list = array.map((data) => (
-    <ForecastCard temp={data.main.temp} weather={data.weather[0].main} icon={data.weather[0].icon}/>
+    <ForecastCard
+      key={data.dt}
+      date={data.dt}
+      temp={data.main.temp}
+      weather={data.weather[0].main}
+      icon={data.weather[0].icon}
+    />
   ));
   return <ul className="grid-container">{list}</ul>;
 };
@@ -31,14 +48,17 @@ export const ForecastCardGrid = (props) => {
 const ForecastCard = (props) => {
   return (
     <li className="grid-item">
-      <div class="card night">
+      <div className="card night">
+        <div className="date">
+          {new Date(parseInt(props.date) * 1000).toDateString()}
+        </div>
         <img
           src={`http://openweathermap.org/img/wn/${props.icon}@4x.png`}
           alt={`${props.weather}`}
           //width="60"
         />
       </div>
-      <div class="status">
+      <div className="status">
         <p>{props.temp}&deg;C</p>
         <p>{props.weather}</p>
       </div>
