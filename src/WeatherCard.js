@@ -33,7 +33,6 @@ export const WeatherCard = (props) => {
 
 export const ForecastCardGrid = (props) => {
   const array = props.weatherDetails;
-  //console.log(array,"--->",array[0],"Date",new Date().getTime()/1000);
   const list = array.map((data) => (
     <ForecastCard
       key={data.dt}
