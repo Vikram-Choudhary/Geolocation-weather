@@ -1,8 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import axios from "axios";
+
+/*Css Import*/
+import "./SeasonDisplay.css";
+import "./Snowflake.css";
+
+/*Component Import*/
 import SeasonDisplay from "./SeasonDisplay";
 import Spinner from "./Spinner";
-import axios from "axios";
 
 class App extends React.Component {
   state = { lat: null, errorMessage: "", forecastData: null };
@@ -20,16 +26,24 @@ class App extends React.Component {
   }
 
   fetchWeatherData = async (lat, lon) => {
-    const key = "1e35c7294c92e3b7ab34c28cc8cd8b56";
-    const URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
-    await axios.get(URL).then((response) => {
-      this.setState({ forecastData: response.data });
-    });
+    const apiKey =
+      process.env
+        .REACT_APP_WEATHER_API_KEY; /*Paste API key here, Sign up and get an API key https://openweathermap.org/appid */
+    const URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    await axios
+      .get(URL)
+      .then((response) => {
+        this.setState({ forecastData: response.data });
+      })
+      .catch((err) => {
+        let message = err.response && err.response.data.message;
+        this.setState({ errorMessage: message });
+      });
   };
 
   renderContent() {
     if (this.state.errorMessage && !this.state.forecastData) {
-      return <div>Error: {this.state.errorMessage}</div>;
+      return <div className="error">Error: {this.state.errorMessage}</div>;
     }
 
     if (!this.state.errorMessage && this.state.forecastData) {

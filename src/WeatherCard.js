@@ -4,18 +4,20 @@ export const WeatherCard = (props) => {
   const current = props.todaysData && props.todaysData[0];
   return (
     <div className="widget">
-      <div className="left-panel panel">
+      <div className="panel">
         <div className="date">{`Today, ${new Date(
           parseInt(current.dt) * 1000
         ).toDateString()}`}</div>
         <div className="city">{props.cityName}</div>
         <div className="temp">{current.main.temp}&deg;C</div>
         <div className="other">
-          Min:&nbsp;&nbsp;{current.main.temp_min}&deg;C&nbsp;&nbsp;&nbsp;&nbsp;Humidity:&nbsp;&nbsp;
+          Min:&nbsp;&nbsp;{current.main.temp_min}
+          &deg;C&nbsp;&nbsp;&nbsp;&nbsp;Humidity:&nbsp;&nbsp;
           {current.main.humidity}%
         </div>
         <div className="other">
-          Max:&nbsp;&nbsp;{current.main.temp_max}&deg;C&nbsp;&nbsp;&nbsp;&nbsp;Wind:&nbsp;&nbsp;
+          Max:&nbsp;&nbsp;{current.main.temp_max}
+          &deg;C&nbsp;&nbsp;&nbsp;&nbsp;Wind:&nbsp;&nbsp;
           {current.wind.speed} km/h
         </div>
       </div>
@@ -37,8 +39,9 @@ export const ForecastCardGrid = (props) => {
     <ForecastCard
       key={data.dt}
       date={data.dt}
-      temp={data.main.temp}
-      weather={data.weather[0].main}
+      temp={data.main}
+      wind={data.wind.speed}
+      weather={data.weather[0].description}
       icon={data.weather[0].icon}
     />
   ));
@@ -52,15 +55,26 @@ const ForecastCard = (props) => {
         <div className="date">
           {new Date(parseInt(props.date) * 1000).toDateString()}
         </div>
+        <div className="icon-description">{props.weather}</div>
         <img
-          src={`http://openweathermap.org/img/wn/${props.icon}@4x.png`}
+          src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`}
           alt={`${props.weather}`}
-          //width="60"
+          width="140px"
         />
-      </div>
-      <div className="status">
-        <p>{props.temp}&deg;C</p>
-        <p>{props.weather}</p>
+        <div className="temp">{props.temp.temp}&deg;C</div>
+        <div className="other">
+          Feel like:&nbsp;{props.temp.feels_like}&deg;C
+        </div>
+        <div className="other">
+          Min:&nbsp;{props.temp.temp_min}
+          &deg;C&nbsp;&nbsp;Humidity:&nbsp;
+          {props.temp.humidity}%
+        </div>
+        <div className="other">
+          Max:&nbsp;{props.temp.temp_max}
+          &deg;C&nbsp;&nbsp;Wind:&nbsp;
+          {props.wind} km/h
+        </div>
       </div>
     </li>
   );
