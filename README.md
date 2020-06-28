@@ -17,13 +17,13 @@ It uses Geo-Location for weather report for almost all global locations. It is a
 
 Screenshots
 --------------
-![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/weather-forecast/src/ScreenShots/rain.JPG)
+![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/master/src/ScreenShots/rain.JPG)
 --------------
-![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/weather-forecast/src/ScreenShots/snow.JPG)
+![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/master/src/ScreenShots/snow.JPG)
 --------------
-![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/weather-forecast/src/ScreenShots/clearSky.JPG)
+![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/master/src/ScreenShots/clearSky.JPG)
 --------------
-![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/weather-forecast/src/ScreenShots/nightCloud.JPG)
+![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/master/src/ScreenShots/nightCloud.JPG)
 
 # API Usage
 The Weather-Forecast uses the  OpenWeatherMap API to get the current weather. OpenWeatherMap API is free to use for smaller-scale applications. Large applications with bigger user bases may need to opt into one of the paid plans in order to satisfy the higher call–per-minute needs. The free tier comes with the following restrictions:
