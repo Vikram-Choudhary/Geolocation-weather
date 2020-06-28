@@ -17,8 +17,6 @@ It uses Geo-Location for weather report for almost all global locations. It is a
 
 Screenshots
 --------------
-![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/weather-forecast/src/ScreenShots/1.JPG)
---------------
 ![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/weather-forecast/src/ScreenShots/rain.JPG)
 --------------
 ![image](https://github.com/Vikram-Choudhary/Geolocation-weather/blob/weather-forecast/src/ScreenShots/snow.JPG)
