@@ -65,7 +65,7 @@ div.right-panel {
   z-index: 3;
 }
 .card {
-  padding: 2.5em 1em;
+  padding: em 1em;
   text-align: center;
 }
 /* Default Day/Night Css */
