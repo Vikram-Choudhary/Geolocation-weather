@@ -1,6 +1,6 @@
 {
-  "homepage": "https://Vikram-Choudhary.github.io/weather-forecast-build",
-  "name": "jsx",
+  "homepage": "http://Vikram-Choudhary.github.io/deploy-weatherapp",
+  "name": "vikram-choudhary-weather-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,7 +10,7 @@
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "predeploy": "npm run build",

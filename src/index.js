@@ -29,7 +29,7 @@ class App extends React.Component {
     const apiKey =
       process.env
         .REACT_APP_WEATHER_API_KEY; /*Paste API key here, Sign up and get an API key https://openweathermap.org/appid */
-    const URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     await axios
       .get(URL)
       .then((response) => {

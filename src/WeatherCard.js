@@ -24,7 +24,7 @@ export const WeatherCard = (props) => {
       <div className="right-panel panel">
         <div className="icon-description">{current.weather[0].description}</div>
         <img
-          src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}
+          src={`https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}
           alt={`${current.weather[0].description}`}
           width="140px"
         />
@@ -57,7 +57,7 @@ const ForecastCard = (props) => {
         </div>
         <div className="icon-description">{props.weather}</div>
         <img
-          src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`}
+          src={`https://openweathermap.org/img/wn/${props.icon}@2x.png`}
           alt={`${props.weather}`}
           width="140px"
         />
