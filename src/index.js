@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import {createRoot} from "react-dom/client";
 import axios from "axios";
 
 /*Css Import*/
@@ -57,5 +57,6 @@ class App extends React.Component {
     return <div>{this.renderContent()}</div>;
   }
 }
-
-ReactDOM.render(<App />, document.querySelector("#root"));
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
+root.render(<App />);
